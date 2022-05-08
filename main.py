@@ -14,7 +14,7 @@ import deezloader.deezloader
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 import requests
 from PIL import Image
-from aiogram import Bot, Dispatcher, executor, types, exceptions
+from aiogram import Bot, Dispatcher, executor, types, exceptions, Button
 from aiogram.types import InlineQuery, \
     InputTextMessageContent, InlineQueryResultArticle, InputMediaAudio
 from aioify import aioify
@@ -448,12 +448,18 @@ async def help_start(event: types.Message):
     bot_info = await bot.get_me()
     bot_name = bot_info.first_name.replace("_", "\\_").replace("*", "\\*").replace("[", "\\[").replace("`", "\\`")
     bot_username = bot_info.username.replace("_", "\\_").replace("*", "\\*").replace("[", "\\[").replace("`", "\\`")
-    msg = "Hey, Ben *{}*\n".format(bot_name)
-    msg += "Beni Satır içi modda kullanabilirsin:_\n"
-    msg += "Örnek: `@{} a man without love`\n".format(bot_username)
-    msg += "veya sadece *Deezer* albüm ya da müzik *link* yolla \\!"
     
-    await event.answer(msg, parse_mode="MarkdownV2", buttons=[[Button.switch_inline("🔎 ara", query="", same_peer=True)]])
+    result = builder.article(
+        text= "Hey, Ben *{}*\n".format(bot_name)
+              Beni Satır içi modda kullanabilirsin:_\n
+              Örnek: `@{} a man without love`\n".format(bot_username)
+              veya sadece *Deezer* albüm ya da müzik *link* yolla \\!", 
+        parse_mode="MarkdownV2",
+        buttons=[
+                [Button.switch_inline("🔎 ara", query="", same_peer=True)], 
+                [Button.url("👮‍♂️ Bot Sahibi", "https://t.me/mmagneto")]])
+
+    await event.answer([result])
 
 
 @dp.inline_handler()
