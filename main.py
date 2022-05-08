@@ -453,8 +453,8 @@ async def help_start(event: types.Message):
         text= "Hey, Ben *{}*\n.format(bot_name)\n Beni Satır içi modda kullanabilirsin:\n Örnek: `@{} a man without love`\n veya sadece *Deezer* albüm ya da müzik *link* yolla \\!", 
         parse_mode="MarkdownV2",
         buttons=[
-                [Button.switch_inline("🔎 ara", query="", same_peer=True)], 
-                [Button.url("👮‍♂️ Bot Sahibi", "https://t.me/mmagneto")]])
+                [InlineKeyboardButton(text="🔎 ara", switch_inline_query_current_chat='')], 
+                [InlineKeyboardButton(text="👮‍♂️ Bot Sahibi", url="https://t.me/mmagneto")]])
 
     await event.answer([result])
 
