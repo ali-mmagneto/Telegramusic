@@ -11,7 +11,7 @@ import traceback
 from urllib.parse import quote
 
 import deezloader.deezloader
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+from aiogram import InlineKeyboardButton, InlineKeyboardMarkup
 import requests
 from PIL import Image
 from aiogram import Bot, Dispatcher, executor, types, exceptions, Button
