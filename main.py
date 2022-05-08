@@ -11,10 +11,10 @@ import traceback
 from urllib.parse import quote
 
 import deezloader.deezloader
-from aiogram import InlineKeyboardButton, InlineKeyboardMarkup
+from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 import requests
 from PIL import Image
-from aiogram import Bot, Dispatcher, executor, types, exceptions, Button
+from aiogram import Bot, Dispatcher, executor, types, exceptions
 from aiogram.types import InlineQuery, \
     InputTextMessageContent, InlineQueryResultArticle, InputMediaAudio
 from aioify import aioify
