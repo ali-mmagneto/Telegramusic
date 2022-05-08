@@ -446,10 +446,10 @@ async def help_start(event: types.Message):
     bot_info = await bot.get_me()
     bot_name = bot_info.first_name.replace("_", "\\_").replace("*", "\\*").replace("[", "\\[").replace("`", "\\`")
     bot_username = bot_info.username.replace("_", "\\_").replace("*", "\\*").replace("[", "\\[").replace("`", "\\`")
-    msg = "Hey, I'm *{}*\n".format(bot_name)
-    msg += "_You can use me in inline mode :_\n"
-    msg += "@{} \\(album\\|track\\|artist\\) \\<search\\>\n".format(bot_username)
-    msg += "Or just send an *Deezer* album or track *link* \\!"
+    msg = "Hey, Ben *{}*\n".format(bot_name)
+    msg += "Beni Satır içi modda kullanabilirsin:_\n"
+    msg += "@{} \\(album\\|müzik\\|sanatçı\\) \\<ara\\>\n".format(bot_username)
+    msg += "veya sadece *Deezer* albüm ya da müzik *link* yolla \\!"
     await event.answer(msg, parse_mode="MarkdownV2")
 
 
