@@ -4,6 +4,7 @@ import json
 import locale
 import logging
 import os
+from pyrogram import Client, filters
 import re
 import shutil
 import traceback
