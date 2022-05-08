@@ -450,7 +450,7 @@ async def help_start(event: types.Message):
     bot_username = bot_info.username.replace("_", "\\_").replace("*", "\\*").replace("[", "\\[").replace("`", "\\`")
     
     result = (
-        text= "Hey, Ben *{}*\n.format(bot_name)\n Beni Satır içi modda kullanabilirsin:\n Örnek: `@{} a man without love`\n veya sadece *Deezer* albüm ya da müzik *link* yolla \\!", 
+        text= "Deezer İndirebilirim", 
         parse_mode="MarkdownV2",
         buttons=[
                 [InlineKeyboardButton(text="🔎 ara", switch_inline_query_current_chat='')], 
