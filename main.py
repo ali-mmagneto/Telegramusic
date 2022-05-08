@@ -444,7 +444,7 @@ async def get_playlist(event: types.Message):
 
 
 @dp.message_handler(commands=['help', 'start'])
-async def help_start(client, message):
+async def help_start(event: types.Message):
     bot_info = await bot.get_me()
     bot_name = bot_info.first_name.replace("_", "\\_").replace("*", "\\*").replace("[", "\\[").replace("`", "\\`")
     bot_username = bot_info.username.replace("_", "\\_").replace("*", "\\*").replace("[", "\\[").replace("`", "\\`")
