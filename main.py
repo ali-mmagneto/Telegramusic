@@ -10,6 +10,7 @@ import traceback
 from urllib.parse import quote
 
 import deezloader.deezloader
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 import requests
 from PIL import Image
 from aiogram import Bot, Dispatcher, executor, types, exceptions
@@ -58,8 +59,8 @@ LANG = os.environ.get('BOT_LANG')
 if LANG is not None:
     print("Lang : " + LANG)
 else:
-    print("Lang : en")
-    LANG = 'en'
+    print("Lang : tr")
+    LANG = 'tr'
 
 
 def __(s):
@@ -107,7 +108,7 @@ async def get_youtube_audio(event: types.Message):
 
             # Send cover
             await event.answer_photo(image_bytes.read(),
-                                     caption=('<b>Track: {}</b>'
+                                     caption=('<b>Müzik: {}</b>'
                                               '\n{} - {}\n\n<a href="{}">' + __('track_link') + '</a>')
                                      .format(
                                          dict_info['title'],
@@ -448,9 +449,14 @@ async def help_start(event: types.Message):
     bot_username = bot_info.username.replace("_", "\\_").replace("*", "\\*").replace("[", "\\[").replace("`", "\\`")
     msg = "Hey, Ben *{}*\n".format(bot_name)
     msg += "Beni Satır içi modda kullanabilirsin:_\n"
-    msg += "@{} \\(album\\|müzik\\|sanatçı\\) \\<ara\\>\n".format(bot_username)
-    msg += "veya sadece *Deezer* albüm ya da müzik *link* yolla \\!"
-    await event.answer(msg, parse_mode="MarkdownV2")
+    msg += "Örnek: `@{} a man without love`\n".format(bot_username)
+    msg += "veya sadece *Deezer* albüm ya da müzik *link* yolla!"
+    buttons = [
+            [
+                InlineKeyboardButton('Ara 🔍', switch_inline_query_current_chat=''),
+                InlineKeyboardButton('Bot Sahibi', url='https://t.me/mmagneto')
+            ]] 
+    await event.answer(msg, parse_mode="MarkdownV2", reply_markup=InlineKeyboardMarkup(buttons))
 
 
 @dp.inline_handler()
