@@ -450,7 +450,7 @@ async def help_start(event: types.Message):
     bot_username = bot_info.username.replace("_", "\\_").replace("*", "\\*").replace("[", "\\[").replace("`", "\\`")
     
     result = (
-        text= "Deezer İndirebilirim", 
+        text="Deezer İndirebilirim", 
         parse_mode="MarkdownV2",
         buttons=[
                 [InlineKeyboardButton(text="🔎 ara", switch_inline_query_current_chat='')], 
