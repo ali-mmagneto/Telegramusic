@@ -450,10 +450,7 @@ async def help_start(event: types.Message):
     bot_username = bot_info.username.replace("_", "\\_").replace("*", "\\*").replace("[", "\\[").replace("`", "\\`")
     
     result = builder.article(
-        text= "Hey, Ben *{}*\n.format(bot_name)
-              Beni Satır içi modda kullanabilirsin:_\n
-              Örnek: `@{} a man without love`\n".format(bot_username)
-              veya sadece *Deezer* albüm ya da müzik *link* yolla \\!", 
+        text= "Hey, Ben *{}*\n.format(bot_name)\n Beni Satır içi modda kullanabilirsin:\n Örnek: `@{} a man without love`\n".format(bot_username)\n veya sadece *Deezer* albüm ya da müzik *link* yolla \\!", 
         parse_mode="MarkdownV2",
         buttons=[
                 [Button.switch_inline("🔎 ara", query="", same_peer=True)], 
