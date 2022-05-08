@@ -6,6 +6,7 @@
     "pt": "Está fazendo o download...",
     "in": "Anda sedang download...",
     "dt": "Es wird heruntergeladen..."
+    "tr": "`İndiriliyor...`"
   },
   "track_link": {
     "fr": "Lien du track",
@@ -14,6 +15,7 @@
     "pt": "Link da música",
     "in": "Tautan musik",
     "dt": "Musik-Link"
+    "tr": "Müzik Link"
   },
   "album_link": {
     "fr": "Lien de l'album",
@@ -22,6 +24,7 @@
     "pt": "Link do Álbum",
     "in": "Tautan Album",
     "dt": "Album-Link"
+    "tr": "Albüm Link"
   },
   "playlist_link": {
     "fr": "Lien de la playlist",
@@ -30,6 +33,7 @@
     "pt": "Link da playlist",
     "in": "Tautan playlist",
     "dt": "Playlist-Link"
+    "tr": "Playlist Link"
   },
   "download_error": {
     "fr": "Échec du téléchargement.",
@@ -38,6 +42,7 @@
     "pt": "Aconteceu um erro durante o download",
     "in": "Terjadi kesalahan selama download",
     "dt": "Beim Herunterladen ist ein Fehler aufgetreten"
+    "tr": "İndirme Başarısız."
   },
   "running_download": {
     "fr": "Un téléchargement est déjà en cours !",
@@ -46,5 +51,6 @@
     "pt": "Um download já está em andamento!",
     "in": "Pengunduhan sedang berlangsung!",
     "dt": "Ein Download ist bereits in Bearbeitung!"
+    "tr": "Bu link zaten işlemde!"
   }
 }
