@@ -453,7 +453,7 @@ async def help_start(client, message):
     msg += "Örnek: `@{} a man without love`\n".format(bot_username)
     msg += "veya sadece *Deezer* albüm ya da müzik *link* yolla \\!"
     
-    await event.answer(msg, parse_mode="MarkdownV2")
+    await event.answer(msg, parse_mode="MarkdownV2", buttons=[[Button.switch_inline("🔎 ara", query="", same_peer=True)]])
 
 
 @dp.inline_handler()
