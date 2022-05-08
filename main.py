@@ -443,7 +443,7 @@ async def get_playlist(event: types.Message):
         await tmp_err_msg.delete()
 
 
-@Client.on_message(filters.command("start"))
+@dp.message_handler(commands=['help', 'start'])
 async def help_start(client, message):
     bot_info = await bot.get_me()
     bot_name = bot_info.first_name.replace("_", "\\_").replace("*", "\\*").replace("[", "\\[").replace("`", "\\`")
@@ -452,12 +452,8 @@ async def help_start(client, message):
     msg += "Beni Satır içi modda kullanabilirsin:_\n"
     msg += "Örnek: `@{} a man without love`\n".format(bot_username)
     msg += "veya sadece *Deezer* albüm ya da müzik *link* yolla \\!"
-    buttons = [
-            [
-                InlineKeyboardButton('Ara 🔍', switch_inline_query_current_chat=''),
-                InlineKeyboardButton('Bot Sahibi', url='https://t.me/mmagneto')
-            ]] 
-    await message.reply_text(text=msg, parse_mode="MarkdownV2", reply_markup=InlineKeyboardMarkup(buttons))
+    
+    await event.answer(msg, parse_mode="MarkdownV2")
 
 
 @dp.inline_handler()
